@@ -1,4 +1,4 @@
-module com.example.minisociolla {
+module MiniSociolla {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -11,6 +11,9 @@ module com.example.minisociolla {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.minisociolla to javafx.fxml;
-    exports com.example.minisociolla;
+    opens login to javafx.fxml;
+    opens main to javafx.fxml;
+    exports login;
+    exports main;
+    exports main.model;
 }

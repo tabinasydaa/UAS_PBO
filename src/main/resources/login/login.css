@@ -1,0 +1,33 @@
+/* login.css */
+.login-form {
+    -fx-padding: 20;
+    -fx-background-color: #F7EAEA;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-color: #E5B3B3;
+    -fx-border-width: 2;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A4A4A;
+}
+
+.text-field {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 5;
+    -fx-border-color: #E5B3B3;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.login-button {
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.error-label {
+    -fx-font-size: 12px;
+}
