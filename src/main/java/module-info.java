@@ -2,6 +2,7 @@ module MiniSociolla {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
+    requires java.sql;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -16,4 +17,6 @@ module MiniSociolla {
     exports login;
     exports main;
     exports main.model;
+
+
 }

@@ -9,6 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class LoginController {
 
     @FXML
@@ -49,11 +54,10 @@ public class LoginController {
 
     @FXML
     private void initialize() {
-        // Initialize ToggleGroup and set default selection
         userTypeToggleGroup = new ToggleGroup();
         adminRadioButton.setToggleGroup(userTypeToggleGroup);
         userRadioButton.setToggleGroup(userTypeToggleGroup);
-        userTypeToggleGroup.selectToggle(userRadioButton); // Set default selection to User
+        userTypeToggleGroup.selectToggle(userRadioButton);
     }
 
     @FXML
@@ -63,7 +67,6 @@ public class LoginController {
         String userType = ((RadioButton) userTypeToggleGroup.getSelectedToggle()).getText();
 
         if (validateLogin(username, password, userType)) {
-            // Navigate to main screen
             navigateToMainScreen(userType);
         } else {
             errorLabel.setText("Invalid username, password, or user type");
@@ -71,16 +74,27 @@ public class LoginController {
     }
 
     private boolean validateLogin(String username, String password, String userType) {
-        // Add your logic for validation
-        if ("Admin".equals(userType)) {
-            return "admin".equals(username) && "admin".equals(password);
-        } else {
-            return "user".equals(username) && "user".equals(password);
+        boolean isValid = false;
+        String query = "SELECT * FROM users WHERE username = ? AND password = ? AND usertype = ?";
+
+        try (Connection connection = LoginDatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, userType);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                isValid = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        return isValid;
     }
 
     private void navigateToMainScreen(String userType) {
-        // Logic to navigate to the main screen based on user type
         System.out.println("Login successful as " + userType + "! Navigating to the main screen...");
     }
 
