@@ -1,0 +1,35 @@
+.root {
+    -fx-padding: 10;
+    -fx-background-color: #FFD0D0;
+    -fx-font-family: Calibri;
+}
+
+.label {
+    -fx-text-fill: #A87676;
+}
+
+.text-field, .choice-box {
+    -fx-background-color: #E1ACAC;
+    -fx-text-fill: #A87676;
+}
+
+.button {
+    -fx-background-color: #CA8787;
+    -fx-text-fill: #FFD0D0;
+}
+
+.button:hover {
+    -fx-background-color: #A87676;
+}
+
+.focus-button {
+    -fx-background-color: #973c38;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.focus-button:focused {
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+}

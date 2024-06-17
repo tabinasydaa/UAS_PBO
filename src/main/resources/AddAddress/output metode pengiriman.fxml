@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #E1ACAC;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddAddress.AddressController">
+    <children>
+        <!-- Bagian ini untuk Metode Pengiriman -->
+        <VBox layoutX="20.0" layoutY="20.0" spacing="20.0">
+            <HBox spacing="10.0">
+                <!-- Menambahkan emoticon di sebelah kiri tulisan "Metode Pengiriman" -->
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 18px;" text="🚚 Metode Pengiriman" textFill="#FFFFFF" />
+            </HBox>
+            <HBox spacing="10.0">
+                <Button onAction="#handleRegulerButton" style="-fx-background-color: #973c38; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Reguler" />
+                <Button onAction="#handleInstanButton" style="-fx-background-color: #973c38; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Instan" />
+                <Button onAction="#handleHematButton" style="-fx-background-color: #973c38; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-radius: 20;" text="Hemat" />
+            </HBox>
+        </VBox>
+
+        <!-- Bagian ini untuk Informasi Penerima -->
+        <VBox layoutX="20.0" layoutY="100.0" spacing="10.0">
+            <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 18px;" text="Informasi Penerima" textFill="#FFFFFF" />
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 14px; -fx-font-weight: bold;" text="👤 Nama Lengkap" textFill="#0C0C0C" />
+            </HBox>
+            <TextField fx:id="textNamaLengkap" onKeyPressed="#handleEnterKey" prefWidth="360.0" style="-fx-background-color: #A87676; -fx-text-fill: #F7F9F2;" />
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 14px; -fx-font-weight: bold;" text="📱 Nomor Handphone" textFill="#0C0C0C" />
+            </HBox>
+            <TextField fx:id="textNomorHandphone" onKeyPressed="#handleEnterKey" prefWidth="360.0" style="-fx-background-color: #A87676; -fx-text-fill: #F7F9F2;" />
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 14px; -fx-font-weight: bold;" text="🏠 Alamat Penerima" textFill="#0C0C0C" />
+            </HBox>
+            <TextField fx:id="textAlamatPenerima" onKeyPressed="#handleEnterKey" prefWidth="360.0" promptText="Rumah/Kantor" style="-fx-background-color: #A87676; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #FFFFFF;" />
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 14px; -fx-font-weight: bold;" text="🏠 Alamat Lengkap" textFill="#0C0C0C" />
+            </HBox>
+            <TextField fx:id="textDetailAlamat" onKeyPressed="#handleEnterKey" prefWidth="360.0" promptText="Blok/Nama Jalan" style="-fx-background-color: #A87676; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #FFFFFF;" />
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label style="-fx-font-family: 'Arial Rounded'; -fx-font-size: 14px; -fx-font-weight: bold;" text="📮 Kode Pos" textFill="#0C0C0C" />
+            </HBox>
+            <TextField fx:id="textKodePos" onKeyPressed="#handleEnterKey" prefWidth="360.0" promptText="Kode Pos" style="-fx-background-color: #A87676; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #FFFFFF;" />
+
+            <CheckBox fx:id="checkboxDefault" style="-fx-font-weight: bold; -fx-font-family: 'Arial Rounded';" text="Gunakan sebagai alamat utama" textFill="#0C0C0C" />
+
+            <HBox spacing="10.0">
+                <Button fx:id="buttonSave" onAction="#handleSaveButton" style="-fx-background-color: #973c38; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-border-radius: 20;" text="SAVE" />
+                <Button fx:id="buttonCancel" onAction="#handleCancelButton" style="-fx-background-color: #973c38; -fx-text-fill: #ffffff; -fx-background-radius: 20; -fx-border-radius: 20;" text="CANCEL" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
