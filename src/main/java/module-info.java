@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+module com.example.uaslabpbo {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires java.desktop;
+
+    opens Struk to javafx.fxml;
+    exports Struk;
+}
+=======
 module MiniSociolla {
     requires javafx.controls;
     requires javafx.fxml;
@@ -20,3 +30,4 @@ module MiniSociolla {
 
 
 }
+>>>>>>> 6375103081f943aff92fe216b866abf7d8d3e9cd
