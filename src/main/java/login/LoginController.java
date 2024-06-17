@@ -75,7 +75,7 @@ public class LoginController {
 
     private boolean validateLogin(String username, String password, String userType) {
         boolean isValid = false;
-        String query = "SELECT * FROM users WHERE username = ? AND password = ? AND usertype = ?";
+        String query = "SELECT * FROM login WHERE username = ? AND password = ? AND usertype = ?";
 
         try (Connection connection = LoginDatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -115,12 +115,34 @@ public class LoginController {
         String username = signUpUsernameField.getText();
         String password = signUpPasswordField.getText();
         String confirmPassword = signUpConfirmPasswordField.getText();
+        String userType = ((RadioButton) userTypeToggleGroup.getSelectedToggle()).getText();
 
         if (password.equals(confirmPassword)) {
-            System.out.println("Account created for: " + username);
-            // Logic to create a new account
+            if (createNewUser(username, password, userType)) {
+                errorLabel.setText("Account created successfully");
+                showLoginPane();
+            } else {
+                errorLabel.setText("Error creating account");
+            }
         } else {
-            System.out.println("Passwords do not match");
+            errorLabel.setText("Passwords do not match");
+        }
+    }
+
+    private boolean createNewUser(String username, String password, String userType) {
+        String query = "INSERT INTO login (username, password, usertype) VALUES (?, ?, ?)";
+
+        try (Connection connection = LoginDatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, userType);
+
+            int result = preparedStatement.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }
