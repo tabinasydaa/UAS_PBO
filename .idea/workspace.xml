@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caa16e65-85b6-4bf3-9250-31c8f2cc9b7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/SnakeGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/AddAddress/AddressDatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AddAddress/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddAddress/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KeranjangCheckout/KeranjangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KeranjangCheckout/KeranjangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginDatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Struk/Struk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Struk/Struk.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/KeranjangCheckout/Keranjang.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/KeranjangCheckout/Keranjang.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +33,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -43,12 +52,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
+    &quot;associatedIndex&quot;: 8
+    }</component>
   <component name="ProjectId" id="2i2MT1TSsglzvEB1dWBSQXkQelx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -58,17 +64,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AddressApplication.executor": "Run",
+    "Application.AddressDatabaseConnection.executor": "Run",
     "Application.KeranjangApplication.executor": "Run",
     "Application.LoginApplication.executor": "Run",
     "Application.MainApplication.executor": "Run",
-    "Application.SnakeGame.executor": "Run",
-    "Application.StrukApplication.executor": "Run",
-    "Application.snake.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tabina-update",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "tabhita",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Asus Tuf/IdeaProjects/GlamHeaven/src/main/java/image",
+    "last_opened_file_path": "C:/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,9 +82,14 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "xml.defaultSchemas",
+    "project.structure.side.proportion": "0.52068967",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,7 +121,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="caa16e65-85b6-4bf3-9250-31c8f2cc9b7b" name="Changes" comment="" />
+      <changelist id="01e74546-c751-4ff1-9f91-6009bfb68dd7" name="Changes" comment="" />
       <created>1718684226230</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -145,18 +155,7 @@
       <workItem from="1718738911182" duration="136000" />
       <workItem from="1718739057498" duration="51000" />
       <workItem from="1718758872646" duration="11305000" />
-      <workItem from="1718787429961" duration="207000" />
-      <workItem from="1718787676404" duration="1723000" />
-      <workItem from="1718789432277" duration="210000" />
-      <workItem from="1718790278426" duration="67000" />
-      <workItem from="1718790432882" duration="18000" />
-      <workItem from="1718791624633" duration="17000" />
-      <workItem from="1718791947649" duration="809000" />
-      <workItem from="1718794649573" duration="503000" />
-      <workItem from="1718796186640" duration="21000" />
-      <workItem from="1718804685132" duration="16000" />
-      <workItem from="1718805308929" duration="105000" />
-      <workItem from="1718806289323" duration="5459000" />
+      <workItem from="1718792441679" duration="19072000" />
     </task>
     <servers />
   </component>
@@ -168,8 +167,15 @@
       <path value="$PROJECT_DIR$/UAS_PBO_GlamHeaven" />
     </ignored-roots>
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/AddAddress/AddressController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

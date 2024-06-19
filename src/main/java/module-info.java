@@ -10,7 +10,7 @@ module tess {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
-    requires com.almasb.fxgl.all;
+//    requires com.almasb.fxgl.all;
     requires java.sql;
     requires java.desktop;
 
@@ -24,7 +24,4 @@ module tess {
     exports login;
     exports AddAddress;
     exports KeranjangCheckout;
-
-//    exports model;/
-    opens main.model to javafx.fxml;
 }
