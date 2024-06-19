@@ -1,22 +1,37 @@
 package main;
 
-import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import main.model.Product;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
+import login.LoginDatabaseConnection;
+import main.model.Product;
+
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainController {
+
+    private static final Logger LOGGER = Logger.getLogger(MainController.class.getName());
 
     @FXML
     private VBox chosenProductCard;
@@ -37,30 +52,24 @@ public class MainController {
     private GridPane gridProduct;
 
     @FXML
-    private Label recommendedTitleLabel;  // Label for "Our Recommended" title
-
-    @FXML
     private ChoiceBox<String> categoryChoiceBox;
 
     @FXML
-    private Spinner<Integer> quantitySpinner;
-
-    @FXML
-    private ScrollPane scrollPane;  // Reference to the ScrollPane
+    private Spinner<Integer> quantitySpinner;  // Spinner for selecting quantity
 
     private List<Product> products;
-    private List<Product> recommendedProducts;
+
+    @FXML
+    private Button cartButton;
 
     @FXML
     private void initialize() {
-        chosenProductCard.setVisible(false);
-        scrollPane.setVisible(true);  // Ensure the ScrollPane is visible initially
+        chosenProductCard.setVisible(false);  // Make the chosenProductCard invisible initially
 
         categoryChoiceBox.getItems().addAll("Makeup", "Skincare", "Bodycare");
         categoryChoiceBox.setOnAction(e -> loadProducts(categoryChoiceBox.getValue()));
 
         products = List.of(
-                // Makeup products
                 new Product("Skintific", 167800, "Makeup", getResource("/main/image/skintific.png"), "Cover All Perfect Cushion"),
                 new Product("YOU Beauty", 166500, "Makeup", getResource("/main/image/YOU (makeup).png"), "YOU Noutriwear+ Flawless Cushion Foundation"),
                 new Product("Make Over", 205000, "Makeup", getResource("/main/image/makeover.jpg"), "Powerstay Matte Powder Foundation"),
@@ -71,7 +80,7 @@ public class MainController {
                 new Product("Loreal Paris", 174500, "Makeup", getResource("/main/image/loreal paris (makeup).png"), "Rouge Signature Liquid Matte Lipstick"),
                 new Product("Barenbliss", 65500, "Makeup", getResource("/main/image/barenbliss.png"), "Peach Makes Perfect Lip Tint"),
                 new Product("Focallure", 36100, "Makeup", getResource("/main/image/focallure (makeup).png"), "CREAMY LIP & CHEEK DUO"),
-                new Product("Dear Me Beauty", 49000, "Makeup", getResource("/main/image/dear  me beauty (makeup).png"), "Serum Lip Tint"),
+                new Product("Dear Me Beauty", 49000, "Makeup", getResource("/main/image/dear me beauty (makeup).png"), "Serum Lip Tint"),
                 new Product("Mother Of Pearl", 94050, "Makeup", getResource("/main/image/mother of pearl (makeup).png"), "AM to PM Colorfast Hypertint"),
                 new Product("Espoir", 455000, "Makeup", getResource("/main/image/espoir (makeup).png"), "REAL EYE PALETTE ALL NEW"),
                 new Product("Romand", 128700, "Makeup", getResource("/main/image/romand (makeup).png"), "Back Me Tone Up Cream"),
@@ -79,8 +88,6 @@ public class MainController {
                 new Product("Dazzle Me", 37900, "Makeup", getResource("/main/image/dazzle me (makeup).png"), "Get a Grip! Makeup Setting Spray"),
                 new Product("Rose All Day", 107500, "Makeup", getResource("/main/image/rad (makeup).png"), "Berry Kiss Holiday Bundle"),
                 new Product("Nama Beauty", 119000, "Makeup", getResource("/main/image/nama (makeup).png"), "Play All Day Matte Lipcream"),
-
-                // Skincare products
                 new Product("Avoskin", 148800, "Skincare", getResource("/main/image/avoskin (skincare).png"), "Intensive Nourishing Eye Cream Alpha Arbutin"),
                 new Product("COSRX", 339000, "Skincare", getResource("/main/image/cosrx (skincare).png"), "Advanced Snail Hydrogel Eye Patch"),
                 new Product("Heimish", 191400, "Skincare", getResource("/main/image/heimish (skincare).png"), "Matcha Biome Hydrogel Eye Patch"),
@@ -99,8 +106,6 @@ public class MainController {
                 new Product("Safi", 80000, "Skincare", getResource("/main/image/safi.jpg"), "White Expert Make Up Remover"),
                 new Product("Pyungkang Yul", 169000, "Skincare", getResource("/main/image/pyungkang (skincare).png"), "Mist Toner"),
                 new Product("Acwell", 148500, "Skincare", getResource("/main/image/acwell.png"), "Licorice pH Balancing Cleansing Toner"),
-
-                // Bodycare products
                 new Product("Bio-Oil", 152000, "Bodycare", getResource("/main/image/bio oil (bodycare).jpg"), "Bio-Oil"),
                 new Product("Sukin", 160000, "Bodycare", getResource("/main/image/sukin (bodycare).png"), "Botanical Body Wash Signature Scent"),
                 new Product("Nivea", 107000, "Bodycare", getResource("/main/image/nivea (bodycare).png"), "NIVEA Body Lotion Intensive Lotion Set"),
@@ -121,17 +126,9 @@ public class MainController {
                 new Product("Dove", 40250, "Bodycare", getResource("/main/image/dove.png"), "Women Antiperspirant Aerosol Soft Feel 150Ml")
         );
 
-        recommendedProducts = List.of(
-                products.get(0), // Example recommended products
-                products.get(1),
-                products.get(2)
-        );
-
         // Initialize Spinner
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
         quantitySpinner.setValueFactory(valueFactory);
-
-        loadRecommendedProducts();
     }
 
     private String getResource(String resourcePath) {
@@ -139,25 +136,7 @@ public class MainController {
         return resource != null ? resource.toExternalForm() : "";
     }
 
-    private void loadRecommendedProducts() {
-        recommendedTitleLabel.setVisible(true);  // Show the "Our Recommended" title
-        gridProduct.getChildren().clear();
-        int column = 0;
-        int row = 0;
-
-        for (Product product : recommendedProducts) {
-            VBox productCard = createProductCard(product);
-            gridProduct.add(productCard, column++, row);
-
-            if (column == 3) {
-                column = 0;
-                row++;
-            }
-        }
-    }
-
     private void loadProducts(String category) {
-        recommendedTitleLabel.setVisible(false);  // Hide the "Our Recommended" title
         gridProduct.getChildren().clear();
         int column = 0;
         int row = 0;
@@ -192,7 +171,7 @@ public class MainController {
                 imgView.setPreserveRatio(true);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error loading product image", e);
         }
 
         Label nameLabel = new Label(product.getName());
@@ -216,26 +195,67 @@ public class MainController {
                 productImg.setImage(new Image(product.getImagePath(), true));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error loading product image", e);
         }
-        chosenProductCard.setVisible(true);
+        chosenProductCard.setVisible(true);  // Make the chosenProductCard visible when a product is selected
     }
 
     @FXML
     private void addToCart() {
         int quantity = quantitySpinner.getValue();
-        // Logic for adding the product to the cart with the specified quantity
+        String username = "currentLoggedInUser"; // Ganti dengan cara mendapatkan username pengguna saat ini
+        int productId = getProductIdByName(productNameLabel.getText());
+        addToCart(username, productId, quantity);
         System.out.println("Added to cart: " + quantity + " items of " + productNameLabel.getText());
     }
 
     @FXML
-    private void playNow() {
+    private void handleCartButtonAction() {
         try {
-            SnakeGame snakeGame = new SnakeGame();
-            Stage snakeStage = new Stage();
-            snakeGame.start(snakeStage);
-        } catch (Exception e) {
-            e.printStackTrace();
+            Stage stage = (Stage) cartButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/KeranjangCheckout/Keranjang.fxml"));
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.setTitle("Keranjang Belanja");
+            stage.show();
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Error loading cart scene", e);
         }
+    }
+
+    private void addToCart(String username, int productId, int quantity) {
+        Connection connection = LoginDatabaseConnection.getConnection();
+        if (connection != null) {
+            String sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES ((SELECT id FROM users WHERE username = ?), ?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, username);
+                preparedStatement.setInt(2, productId);
+                preparedStatement.setInt(3, quantity);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                LOGGER.log(Level.SEVERE, "Error adding to cart", e);
+            }
+        } else {
+            LOGGER.log(Level.SEVERE, "Koneksi ke database gagal");
+        }
+    }
+
+    private int getProductIdByName(String productName) {
+        Connection connection = LoginDatabaseConnection.getConnection();
+        if (connection != null) {
+            String sql = "SELECT id FROM products WHERE name = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, productName);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    return resultSet.getInt("id");
+                }
+            } catch (SQLException e) {
+                LOGGER.log(Level.SEVERE, "Error getting product ID", e);
+            }
+        } else {
+            LOGGER.log(Level.SEVERE, "Koneksi ke database gagal");
+        }
+        return -1;
     }
 }
