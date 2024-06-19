@@ -9,7 +9,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.model.Product;
-
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
@@ -34,16 +37,24 @@ public class MainController {
     private GridPane gridProduct;
 
     @FXML
+    private Label recommendedTitleLabel;  // Label for "Our Recommended" title
+
+    @FXML
     private ChoiceBox<String> categoryChoiceBox;
 
     @FXML
-    private Spinner<Integer> quantitySpinner;  // Spinner for selecting quantity
+    private Spinner<Integer> quantitySpinner;
+
+    @FXML
+    private ScrollPane scrollPane;  // Reference to the ScrollPane
 
     private List<Product> products;
+    private List<Product> recommendedProducts;
 
     @FXML
     private void initialize() {
-        chosenProductCard.setVisible(false);  // Make the chosenProductCard invisible initially
+        chosenProductCard.setVisible(false);
+        scrollPane.setVisible(true);  // Ensure the ScrollPane is visible initially
 
         categoryChoiceBox.getItems().addAll("Makeup", "Skincare", "Bodycare");
         categoryChoiceBox.setOnAction(e -> loadProducts(categoryChoiceBox.getValue()));
@@ -110,9 +121,17 @@ public class MainController {
                 new Product("Dove", 40250, "Bodycare", getResource("/main/image/dove.png"), "Women Antiperspirant Aerosol Soft Feel 150Ml")
         );
 
+        recommendedProducts = List.of(
+                products.get(0), // Example recommended products
+                products.get(1),
+                products.get(2)
+        );
+
         // Initialize Spinner
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
         quantitySpinner.setValueFactory(valueFactory);
+
+        loadRecommendedProducts();
     }
 
     private String getResource(String resourcePath) {
@@ -120,7 +139,25 @@ public class MainController {
         return resource != null ? resource.toExternalForm() : "";
     }
 
+    private void loadRecommendedProducts() {
+        recommendedTitleLabel.setVisible(true);  // Show the "Our Recommended" title
+        gridProduct.getChildren().clear();
+        int column = 0;
+        int row = 0;
+
+        for (Product product : recommendedProducts) {
+            VBox productCard = createProductCard(product);
+            gridProduct.add(productCard, column++, row);
+
+            if (column == 3) {
+                column = 0;
+                row++;
+            }
+        }
+    }
+
     private void loadProducts(String category) {
+        recommendedTitleLabel.setVisible(false);  // Hide the "Our Recommended" title
         gridProduct.getChildren().clear();
         int column = 0;
         int row = 0;
@@ -181,7 +218,7 @@ public class MainController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        chosenProductCard.setVisible(true);  // Make the chosenProductCard visible when a product is selected
+        chosenProductCard.setVisible(true);
     }
 
     @FXML
@@ -189,5 +226,16 @@ public class MainController {
         int quantity = quantitySpinner.getValue();
         // Logic for adding the product to the cart with the specified quantity
         System.out.println("Added to cart: " + quantity + " items of " + productNameLabel.getText());
+    }
+
+    @FXML
+    private void playNow() {
+        try {
+            SnakeGame snakeGame = new SnakeGame();
+            Stage snakeStage = new Stage();
+            snakeGame.start(snakeStage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
