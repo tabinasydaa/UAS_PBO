@@ -15,7 +15,7 @@ public class MainApplication extends Application {
             AnchorPane pane = loader.load();
             Scene scene = new Scene(pane);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Mini Sociolla - Main");
+            primaryStage.setTitle("GlamHeaven");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

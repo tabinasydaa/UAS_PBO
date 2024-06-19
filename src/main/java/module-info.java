@@ -24,4 +24,7 @@ module tess {
     exports login;
     exports AddAddress;
     exports KeranjangCheckout;
+
+//    exports model;/
+    opens main.model to javafx.fxml;
 }
