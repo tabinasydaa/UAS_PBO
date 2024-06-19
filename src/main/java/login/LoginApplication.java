@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //package login;
 //
 //import javafx.application.Application;
@@ -23,6 +24,8 @@
 //}
 
 
+=======
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 package login;
 
 import javafx.application.Application;
@@ -51,4 +54,7 @@ public class LoginApplication extends Application {
         launch(args);
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6

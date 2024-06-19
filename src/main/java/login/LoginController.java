@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //package login;
 //
 //
@@ -36,6 +37,8 @@
 //}
 
 
+=======
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 package login;
 
 import javafx.fxml.FXML;
@@ -184,4 +187,7 @@ public class LoginController {
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6

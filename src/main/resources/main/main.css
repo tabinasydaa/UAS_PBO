@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 .search-box {
     -fx-background-color: #FFD0D0;
+=======
+.search-box{
+    -fx-background-color:#FFD0D0;
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-radius: 100;
 }
 
@@ -13,6 +18,7 @@
     -fx-padding: 0;
 }
 
+<<<<<<< HEAD
 .search-button {
     -fx-background-color: #828282;
     -fx-background-radius: 15;
@@ -33,30 +39,63 @@
 }
 
 .chosen-fruit-card {
+=======
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #D3D3D3;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+.chosen-fruit-card{
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-color: #FFD0D0;
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
 .comboBox {
+=======
+.comboBox{
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-color: rgba(255,255,255,0.3);
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
 .add-btn {
+=======
+.add-btn{
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 100;
 }
 
+<<<<<<< HEAD
 .free-delivery-card {
+=======
+.free-delivery-card{
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-color: #D3D3D3;
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
 .shopping-online-card {
+=======
+.shopping-online-card{
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     -fx-background-color: #BAEAC3;
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
 .fruit-item {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 30;
@@ -100,3 +139,9 @@
 }
 
 
+=======
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+>>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
