@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<<<<<<< HEAD
-<?import java.lang.String?>
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Spinner?>
-=======
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,19 +12,15 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<<<<<<< HEAD
 <?import javafx.scene.layout.RowConstraints?>
-=======
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
-<<<<<<< HEAD
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
     <children>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane prefHeight="605.0" prefWidth="925.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <left>
-                <VBox prefHeight="200.0" prefWidth="302.0" style="-fx-background-color: E1ACAC;" BorderPane.alignment="CENTER">
+                <VBox prefHeight="200.0" prefWidth="302.0" style="-fx-background-color: E1ACAC;">
                     <children>
                         <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
                             <children>
@@ -57,21 +41,13 @@
                                 <Insets left="10.0" right="10.0" top="10.0" />
                             </VBox.margin>
                             <children>
-                                <Label text="Choose ur Category" />
+                                <Label text="Choose your Category" />
                                 <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
                                     <children>
                                         <ChoiceBox fx:id="categoryChoiceBox" prefHeight="28.0" prefWidth="82.0" />
                                     </children>
                                 </HBox>
                             </children>
-                            <stylesheets>
-                                <URL value="@../../../../../tampilan/src/main/resources/main" />
-                                <URL value="@main.css" />
-                            </stylesheets>
-                            <styleClass>
-                                <String fx:value="search-box" />
-                                <String fx:value="search-box" />
-                            </styleClass>
                         </VBox>
                         <VBox fx:id="chosenProductCard" alignment="CENTER" prefHeight="400.0" prefWidth="300.0" styleClass="chosen-fruit-card" stylesheets="@main.css">
                             <VBox.margin>
@@ -118,112 +94,18 @@
                                             <padding>
                                                 <Insets left="30.0" />
                                             </padding>
-                                 <font>
-                                    <Font name="Cambria" size="12.0" />
-                                 </font>
+                                            <font>
+                                                <Font name="Cambria" size="12.0" />
+                                            </font>
                                         </Label>
                                         <Spinner fx:id="quantitySpinner" prefHeight="26.0" prefWidth="56.0">
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin></Spinner>
-                              <Label prefHeight="18.0" prefWidth="18.0">
-=======
-   <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox prefHeight="200.0" prefWidth="290.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="73.0" text="Glam" textAlignment="JUSTIFY" textFill="#b78b8b">
-                           <font>
-                              <Font name="Cambria Bold" size="30.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="83.0" text="Haven" textAlignment="JUSTIFY" textFill="#bc8080a8">
-                           <font>
-                              <Font name="Cambria Italic" size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" styleClass="search-box" stylesheets="file:/C:/Users/Asus%20Tuf/IdeaProjects/MiniSociolla/src/main/resources/main/main.css">
-                     <VBox.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </VBox.margin>
-                     <children>
-                        <TextField prefHeight="30.0" prefWidth="160.0" promptText="Type here to search" style="-fx-background-color: rgba(0, 0, 0, 0);" styleClass="transparent" stylesheets="@main.css">
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font name="Cambria" size="13.0" />
-                           </font>
-                        </TextField>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" styleClass="search-button" stylesheets="@main.css" text="Search">
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font name="Cambria" size="12.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <VBox fx:id="chosenFruitCard" alignment="CENTER" prefHeight="400.0" prefWidth="100.0" styleClass="chosen-fruit-card" stylesheets="@main.css">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="10.0" top="30.0" />
-                     </VBox.margin>
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="270.0">
-                           <children>
-                              <Label fx:id="fruitNameLable" alignment="CENTER" prefHeight="18.0" prefWidth="148.0" text="SunScreen Facetology">
-                                 <font>
-                                    <Font name="Cambria" size="14.0" />
-                                 </font>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </Label>
-                              <Label fx:id="fruitPriceLabel" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="92.0" text="Rp. 50.000" textAlignment="RIGHT">
-                                 <font>
-                                    <Font name="Cambria" size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <ImageView fx:id="fruitimg" fitHeight="170.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../java/image/makeover.jpg" />
-                           </image>
-                        </ImageView>
-                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="270.0">
-                           <children>
-                              <Label text="Make Over asjsdnakj ahsdajkdnn jefdka">
-                                 <font>
-                                    <Font name="Cambria" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="270.0">
-                           <children>
-                              <Label prefHeight="18.0" prefWidth="64.0" text="Size">
-                                 <opaqueInsets>
-                                    <Insets left="20.0" />
-                                 </opaqueInsets>
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
-                                 <padding>
-                                    <Insets left="30.0" />
-                                 </padding>
-                              </Label>
-<<<<<<< HEAD
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </Spinner>
                                     </children>
                                 </HBox>
-                                <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" styleClass="search-button" text="add to cart">
+                                <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" styleClass="search-button" text="Add to cart">
                                     <VBox.margin>
                                         <Insets top="20.0" />
                                     </VBox.margin>
@@ -234,7 +116,7 @@
                 </VBox>
             </left>
             <center>
-                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                <VBox prefHeight="200.0" prefWidth="100.0">
                     <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                             <opaqueInsets>
@@ -288,9 +170,9 @@
                                         </VBox>
                                     </children>
                                 </HBox>
-                                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="324.0" styleClass="free-delivery-card" stylesheets="@../../../../../tampilan/src/main/resources/main/main.css">
+                                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="324.0" styleClass="free-delivery-card" stylesheets="@main.css">
                                     <children>
-                                        <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="299.0" styleClass="free-delivery-card" stylesheets="@main.css">
+                                        <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="299.0">
                                             <children>
                                                 <Label alignment="CENTER" prefHeight="22.0" prefWidth="167.0" text="get your poin now">
                                                     <font>
@@ -319,9 +201,9 @@
                                 <Insets right="-1.0" />
                             </padding>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="transparent" stylesheets="@main.css" VBox.vgrow="ALWAYS">
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                             <children>
-                                <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="570.0" styleClass="transparent">
+                                <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="570.0" styleClass="transparent" stylesheets="@main.css">
                                     <content>
                                         <GridPane fx:id="gridProduct" prefHeight="850.0" prefWidth="550.0" style="-fx-background-color: ;" stylesheets="@main.css">
                                             <columnConstraints>
@@ -344,10 +226,6 @@
                                             <vgap>20.0</vgap>
                                         </GridPane>
                                     </content>
-                                    <stylesheets>
-                                        <URL value="@main.css" />
-                                        <URL value="@main.css" />
-                                    </stylesheets>
                                 </ScrollPane>
                             </children>
                             <VBox.margin>
@@ -359,132 +237,4 @@
             </center>
         </BorderPane>
     </children>
-=======
-                              <ComboBox prefHeight="7.0" prefWidth="150.0" promptText="lvgs," />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                        <Button mnemonicParsing="false" styleClass="search-button" stylesheets="@main.css" text="add to cart">
-                           <padding>
-                              <Insets top="20.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </left>
-         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
-                     <opaqueInsets>
-                        <Insets left="20.0" right="20.0" />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </VBox.margin>
-                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="362.0">
-                           <font>
-                              <Font name="Cambria" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="82.0" text="Username">
-                           <font>
-                              <Font name="Cambria Italic" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Label>
-                        <ImageView fitHeight="40.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../java/image/cart.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="70.0" prefWidth="200.0">
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="318.0" styleClass="free-delivery-card" stylesheets="@main.css">
-                           <children>
-                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="242.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="22.0" prefWidth="98.0" text="My Poin :">
-                                       <font>
-                                          <Font name="Cambria Bold" size="18.0" />
-                                       </font>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                       <VBox.margin>
-                                          <Insets left="10.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="324.0" styleClass="free-delivery-card" stylesheets="@main.css">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="299.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="22.0" prefWidth="167.0" text="get your poin now">
-                                       <font>
-                                          <Font name="Cambria Bold" size="18.0" />
-                                       </font>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </Label>
-                                    <Button mnemonicParsing="false" styleClass="search-button" stylesheets="@main.css" text="play now!!" />
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets top="10.0" />
-                                 </HBox.margin>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </HBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets right="-1.0" />
-                     </padding>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="570.0" styleClass="transparent" stylesheets="@main.css">
-                           <content>
-                              <GridPane fx:id="grid" prefHeight="3.0" prefWidth="2.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                              </GridPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </HBox>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
-   </children>
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 </AnchorPane>

@@ -1,20 +1,15 @@
 package main;
 
 import javafx.fxml.FXML;
-<<<<<<< HEAD
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-=======
-import javafx.scene.control.*;
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.model.Product;
 
-<<<<<<< HEAD
 import java.net.URL;
 import java.util.List;
 
@@ -37,45 +32,17 @@ public class MainController {
 
     @FXML
     private GridPane gridProduct;
-=======
-public class MainController {
-    @FXML
-    private VBox chosenFruitCard;
 
     @FXML
-    private Label fruitNameLable;
-
-    @FXML
-    private Label fruitPriceLabel;
-
-    @FXML
-    private ImageView fruitimg;
-
-    @FXML
-    private GridPane grid;
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
-
-    @FXML
-    private ScrollPane scroll;
-
-    @FXML
-<<<<<<< HEAD
     private ChoiceBox<String> categoryChoiceBox;
 
     @FXML
     private Spinner<Integer> quantitySpinner;  // Spinner for selecting quantity
-=======
-    private ListView<Product> productList;
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
 
-    @FXML
-    private Button addToCartButton;
-
-<<<<<<< HEAD
     private List<Product> products;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         chosenProductCard.setVisible(false);  // Make the chosenProductCard invisible initially
 
         categoryChoiceBox.getItems().addAll("Makeup", "Skincare", "Bodycare");
@@ -146,8 +113,6 @@ public class MainController {
         // Initialize Spinner
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
         quantitySpinner.setValueFactory(valueFactory);
-
-        addToCartButton.setOnAction(e -> addToCart());
     }
 
     private String getResource(String resourcePath) {
@@ -219,32 +184,10 @@ public class MainController {
         chosenProductCard.setVisible(true);  // Make the chosenProductCard visible when a product is selected
     }
 
+    @FXML
     private void addToCart() {
         int quantity = quantitySpinner.getValue();
         // Logic for adding the product to the cart with the specified quantity
         System.out.println("Added to cart: " + quantity + " items of " + productNameLabel.getText());
-=======
-    @FXML
-    private Button playGameButton;
-
-    @FXML
-    private TextField pointsField;
-
-    @FXML
-    private void handleAddToCart() {
-        Product selectedProduct = productList.getSelectionModel().getSelectedItem();
-        if (selectedProduct != null) {
-            // Add product to cart
-        }
-    }
-
-    @FXML
-    private void handlePlayGame() {
-        // Handle tic-tac-toe game
-        // Add points if the user wins
-        int points = Integer.parseInt(pointsField.getText());
-        points += 5;  // Assuming user wins the game
-        pointsField.setText(String.valueOf(points));
->>>>>>> 4e054974d3d4cd6bc92e4aac8fe9d21537f591c6
     }
 }
